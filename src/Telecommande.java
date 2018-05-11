@@ -34,7 +34,7 @@ public class Telecommande {
 		for(int i=0;i<lampes.size();i++){
 			res =res+"Lampe "+i+lampes.get(i).toString();
 		}
-		
+		return res;
 		
 	}
 	public Lampe getLampes(int i) {
