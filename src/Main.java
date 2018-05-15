@@ -18,7 +18,7 @@ public class Main {
 		// test d'activation
 		t.activerLampe(1);
 		t.activerLampe(3);
-		System.out.println(t);
+		//System.out.println(t);
 
 		// gestion du menu
 		lancerMenu(t);

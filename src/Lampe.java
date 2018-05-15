@@ -52,7 +52,7 @@ public class Lampe {
 		} else {
 			r = "Off";
 		}
-		return (nom + ": " + r);
+		return (" : " + r+" /");
 	}
 
 	/**

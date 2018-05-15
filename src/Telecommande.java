@@ -4,11 +4,13 @@ import java.util.*;
 public class Telecommande {
 	private ArrayList<Lampe> lampes;
 	private ArrayList<Hifi> hifis;
+	private ArrayList<Television> televisions;
 
 	public Telecommande() {
 		// TODO Auto-generated constructor stub
 		lampes = new ArrayList<Lampe>();
 		hifis = new ArrayList<Hifi>();
+		televisions = new ArrayList<Television>();
 	}
 	public void ajouterLampe(Lampe l){
 		lampes.add(l);
@@ -28,6 +30,10 @@ public class Telecommande {
 		for(int i=0;i<hifis.size();i++){
 			hifis.get(i).allumer();
 		}
+		
+		for(int i=0;i<televisions.size();i++){
+			televisions.get(i).allumer();
+		}
 	}
 
 	public void ajouterHifi(Hifi h){
@@ -40,6 +46,15 @@ public class Telecommande {
 		hifis.get(indiceHifi).eteindre();
 	}
 
+	public void ajouterTelevision(Television t){
+		televisions.add(t);
+	}
+	public void activerTelevision(int indiceTelevision){
+		televisions.get(indiceTelevision).allumer();
+	}
+	public void desactiverTelevision(int indiceTelevision){
+		televisions.get(indiceTelevision).eteindre();
+	}
 
 
 	public String toString(){
@@ -50,8 +65,14 @@ public class Telecommande {
 
 		res = res+" || ";
 		for(int i=0;i<hifis.size();i++){
-			res =res+"Hifi "+i+lampes.get(i).toString();;
+			res =res+"Hifi "+i+hifis.get(i).toString();
 		}
+		
+		res = res+" || ";
+		for(int i=0;i<televisions.size();i++){
+			res =res+"Television "+i+televisions.get(i).toString();
+		}
+		
 		return res;
 
 	}
@@ -61,11 +82,7 @@ public class Telecommande {
 	public void setLampes(ArrayList<Lampe> lampes) {
 		this.lampes = lampes;
 	}
-	public static void main(String[] args) {
-		Telecommande t=new Telecommande();
-		Lampe l = new Lampe("lampe1");
-		System.out.println("ee"+t.getLampes(0));
-	}
+
 
 
 }
