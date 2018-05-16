@@ -1,5 +1,5 @@
 
-public class Television {
+public class Television extends Peripherique{
 		/**
 		 * l'intensite du son de la television on suppose que la television est eteinte si
 		 * le son vaut 0
@@ -31,7 +31,7 @@ public class Television {
 		 */
 		public String toString() {
 			String r = "";
-			r += "Television:" + son;
+			r += "Television : " + son+" /";
 			return (r);
 		}
 	

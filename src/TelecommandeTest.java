@@ -8,7 +8,7 @@ public class TelecommandeTest {
 	public void ajoutlampe_Telecommande_Vide(){
 		Telecommande t=new Telecommande();
 		Lampe l = new Lampe("lampe1");
-		t.ajouterLampe(l);
+		t.ajouterPeripherique(l);
 		assertEquals("une lampe aurait du etre ajouter", "lampe1", t.getLampes(0).getNom());
 	}
 	@Test
@@ -16,8 +16,8 @@ public class TelecommandeTest {
 		Telecommande t=new Telecommande();
 		Lampe l1 = new Lampe("lampe1");
 		Lampe l2 = new Lampe("lampe2");
-		t.ajouterLampe(l1);
-		t.ajouterLampe(l2);
+		t.ajouterPeripherique(l1);
+		t.ajouterPeripherique(l2);
 		assertEquals("une lampe aurait du etre ajouter", "lampe1", t.getLampes(0).getNom());
 		assertEquals("une deuxieme lampe aurait du etre ajouter", "lampe2", t.getLampes(1).getNom());
 	}
@@ -25,7 +25,7 @@ public class TelecommandeTest {
 	public void activelampe_existante_posi0(){
 		Telecommande t=new Telecommande();
 		Lampe l = new Lampe("lampe1");
-		t.ajouterLampe(l);
+		t.ajouterPeripherique(l);
 		t.activerLampe(0);
 		assertEquals("la lampe devrait etre activer",true,t.getLampes(0).isAllume());
 	}
@@ -34,8 +34,8 @@ public class TelecommandeTest {
 		Telecommande t=new Telecommande();
 		Lampe l1 = new Lampe("lampe1");
 		Lampe l2 = new Lampe("lampe2");
-		t.ajouterLampe(l1);
-		t.ajouterLampe(l2);
+		t.ajouterPeripherique(l1);
+		t.ajouterPeripherique(l2);
 		t.activerLampe(1);
 		assertEquals("la lampe 1 devrait etre desavtiver",false,t.getLampes(0).isAllume());
 		assertEquals("la lampe 2 devrait etre activer",true,t.getLampes(1).isAllume());

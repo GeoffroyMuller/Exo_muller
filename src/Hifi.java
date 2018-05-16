@@ -1,7 +1,7 @@
 /**
  * classe qui represente une chaine hifi
  */
-public class Hifi {
+public class Hifi extends Peripherique{
 
 	/**
 	 * l'intensite du son de la chaine on suppose que la chaine est eteinte si
@@ -34,7 +34,7 @@ public class Hifi {
 	 */
 	public String toString() {
 		String r = "";
-		r += "Hifi:" + son;
+		r += "Hifi : " + son+" /";
 		return (r);
 	}
 }

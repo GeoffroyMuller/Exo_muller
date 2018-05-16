@@ -16,8 +16,8 @@ public class Main {
 		ajouter4Lampes(t);
 
 		// test d'activation
-		t.activerLampe(1);
-		t.activerLampe(3);
+		t.activerPeripherique(1);
+		t.activerPeripherique(3);
 		//System.out.println(t);
 
 		// gestion du menu
@@ -40,7 +40,7 @@ public class Main {
 		while (!fini) {
 			
 			// demande lampe et commande
-			System.out.println("entrer le numero de la lampe");
+			System.out.println("entrer le numero du peripherique");
 			int choix = sc.nextInt();
 			System.out.println("entrer commande (+/-/exit)");
 			String com = sc.nextLine();
@@ -49,12 +49,12 @@ public class Main {
 			// si la commande est +, on active
 			if (com.equals("+")) {
 				System.out.println("== activer "+choix+"==");
-				t.activerLampe(choix);
+				t.activerPeripherique(choix);
 			}
 			// si la commande est - on descactive
 			else if (com.equals("-")) {
 				System.out.println("== desactiver "+choix+"==");
-				t.desactiverLampe(choix);
+				t.desactiverPeripherique(choix);
 			}
 			// si la commande est exit, on arrete
 			else if (com.equals("exit")) {
@@ -80,16 +80,28 @@ public class Main {
 	 */
 	private static void ajouter4Lampes(Telecommande t) {
 		Lampe l1 = new Lampe("Lampe1");
-		t.ajouterLampe(l1);
+		t.ajouterPeripherique(l1);
 
 		Lampe l2 = new Lampe("Lampe2");
-		t.ajouterLampe(l2);
+		t.ajouterPeripherique(l2);
 
 		Lampe l3 = new Lampe("Lampe3");
-		t.ajouterLampe(l3);
+		t.ajouterPeripherique(l3);
 
 		Lampe l4 = new Lampe("Lampe4");
-		t.ajouterLampe(l4);
+		t.ajouterPeripherique(l4);
+		
+		Television t1 = new Television();
+		t.ajouterPeripherique(t1);
+		
+		Television t2 = new Television();
+		t.ajouterPeripherique(t2);
+		
+		Television t3 = new Television();
+		t.ajouterPeripherique(t3);
+		
+		Television t4 = new Television();
+		t.ajouterPeripherique(t4);
 	}
 
 }

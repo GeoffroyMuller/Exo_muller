@@ -5,7 +5,7 @@
  * prive et manipulable par les methodes allumer et eteindre
  */
 
-public class Lampe {
+public class Lampe extends Peripherique{
 
 	/**
 	 * nom de la lampe
@@ -24,6 +24,7 @@ public class Lampe {
 	 *            nom de la lampe
 	 */
 	public Lampe(String paramNom) {
+		super();
 		this.allume = false;
 		this.nom = paramNom;
 	}
@@ -52,7 +53,7 @@ public class Lampe {
 		} else {
 			r = "Off";
 		}
-		return (" : " + r+" /");
+		return (this.nom+" " + r+" /");
 	}
 
 	/**
